@@ -1,0 +1,124 @@
+% resume.tex
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,margin=0.8in]{geometry}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{enumitem}
+%\usepackage{tabularx}
+\usepackage{array}
+\nofiles                            % .aux files are not needed for resumes
+
+%\usepackage[default]{lato}
+\usepackage[default]{sourcesanspro}
+
+%\usepackage{tgadventor}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+\setlength{\parindent}{0pt}
+\newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
+\newcommand{\printName}[1]{
+{\huge \textbf{#1}}
+\vspace{0.25em}
+\hrule
+\vspace{0.25em}
+}
+
+\newenvironment{resumeSection}[1]{
+%\vspace{1em}
+{\Large \textbf{\textsc{#1}}}
+\vspace{0.25em}
+\hrule
+\vspace{0.5em}
+}{
+
+}
+
+\newenvironment{employer}[2]{
+{\large \textbf{#1} \hfill #2} \newline
+}{
+\vspace{0.5em}
+}
+
+\newenvironment{position}[2]{
+{\large \emph{#1} \hfill \emph{#2}}
+\begin{itemize}[noitemsep,topsep=0pt]
+}{
+\end{itemize}
+\vspace{0.5em}
+}
+
+\newcommand{\degree}[4]{
+\forceindent {\large #1 \hfill #2}
+\newline
+\forceindent\forceindent GPA: #3 \hspace{2em} \emph{#4}
+\newline
+}
+
+
+\begin{document}
+\printName{Adam Bloom}
+Houston, TX \hfill (847) 404-3386 \hfill \href{mailto:adam@adambloom.me}{adam@adambloom.me} \hfill \href{http://www.adambloom.me}{http://www.adambloom.me}
+\vspace{0.5em} \newline
+\begin{resumeSection}{Experience}
+\begin{employer}{ViaSat, Inc.}{Denver, CO}
+\begin{position}{Engineer}{January 2016 (Future)}
+\item Projects related to Exede network, ViaSat-2 ground network, and other TBD
+\end{position}
+\begin{position}{Communication Systems Engineering Intern}{Summer 2014}
+\item Developed carrier power monitoring system for the physical layer of the Exede satellite internet network. The system has been integrated into existing networking monitoring and reporting tools, allowing for automated data collection, historical trending, and automated alerts to prevent outages for 685,000 subscribers.
+    \item Researched method to use diagnostic data to measure the frequency response of the satellite channel, eventually replacing an existing hardware system. As of January 2015, the system is being tested on the production network with promising results.
+\end{position}
+\end{employer}
+
+\begin{employer}{Electrical and Computer Engineering Department, Rice University}{Houston, TX}
+\begin{position}{Introduction to Computer Engineering Course Assistant}{January 2013 --- May 2015}
+\item Incorporated TI MSP430 microcontrollers deeper into the curriculum with the goal of having each student purchase a LaunchPad in lieu of a textbook, which could lead to personal projects after completion of the course
+\item Coached twenty students in digital logic, state machines, assembly and C programming\item Assisted students with two larger projects: an FPGA calculator (using Quartus) and an ISA simulator (in CCS)
+\end{position}
+\begin{position}{Fundamentals of Electrical Engineering Course Assistant}{Fall 2013}
+\item Guided a group of five students though the successful completion of their problem sets by teaching introductory system theory, circuit theory, Fourier analysis, and information theory
+\end{position}
+\end{employer}
+
+\begin{employer}{McMurtry College, Rice University}{Houston, TX}
+\begin{position}{Student Maintenance Representative}{August 2014 --- May 2015}
+\item 
+\end{position}
+\begin{position}{Faculty Master Search Committee Chair}{September 2014 --- December 2014}
+\item
+\end{position}
+\begin{position}{Internal Vice President}{February 2013 --- February 2014}
+\item
+\end{position}
+\end{employer}
+
+\begin{employer}{Camp Nebagamon for Boys}{Lake Nebagamon, WI}
+\begin{position}{Senior Cabin Counselor}{Summers 2010 --- 2013, 2015}
+\item
+\end{position}
+\end{employer}
+
+\end{resumeSection}
+
+\begin{resumeSection}{Education}
+\begin{employer}{Rice University}{Houston, TX}
+\degree{Master of Electrical Engineering}{Expected December 2015}{3.XX}{} \newline
+\degree{Bachelor of Science in Electrical Engineering}{May 2015}{3.XX}{Cum Laude}
+\end{employer}
+\end{resumeSection}
+
+\begin{resumeSection}{Honors and Awards}
+    \begin{tabular}{ >{\bfseries}r @{\hspace{2em}} p{0.8\textwidth}}
+    Awards & Burt and Deedee McMurtry Award for service to McMurtry College (2015), Rice Engineering Alumni Distinguished Leadership Excellence Award (2015), Bill Wilson Prize for Best Electrical and Computer Engineering Design (2015), Chevron Scholarship (2014), Barbara Long Chilton Memorial Award for Science and Engineering majors involved in theater (2012) \\
+      Honor Societies & Tau Beta Pi (Inducted November 2014, Texas Gamma chapter), IEEE-HKN (Inducted March 2014, Theta Rho chapter)
+    \end{tabular}
+\end{resumeSection}
+
+
+\end{document}
