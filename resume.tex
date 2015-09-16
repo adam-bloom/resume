@@ -20,6 +20,10 @@
 %\usepackage{tgadventor}
 %\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
 
+\newcommand*{\seriffont}{\fontfamily{yv1}\selectfont}
+%\newcommand*{\seriffont}{\fontfamily{antpl}\selectfont}
+%\newcommand*{\seriffont}{\fontfamily{ebgaramond}\selectfont}
+
 \setlength{\parindent}{0pt}
 \newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
 \newcommand{\printName}[1]{
@@ -47,17 +51,15 @@
 
 \newenvironment{position}[2]{
 {\large \emph{#1} \hfill \emph{#2}}
+\seriffont 
 \begin{itemize}[noitemsep,topsep=0pt]
 }{
 \end{itemize}
 \vspace{0.5em}
 }
 
-\newcommand{\degree}[4]{
-\forceindent {\large #1 \hfill #2}
-\newline
-\forceindent\forceindent GPA: #3 \hspace{2em} \emph{#4}
-\newline
+\newcommand{\degree}[3]{
+\forceindent {\large #1\ifx\empty#3\else{, }\fi \emph{#3} \hfill #2} \newline
 }
 
 
@@ -79,7 +81,8 @@ Houston, TX \hfill (847) 404-3386 \hfill \href{mailto:adam@adambloom.me}{adam@ad
 \begin{employer}{Electrical and Computer Engineering Department, Rice University}{Houston, TX}
 \begin{position}{Introduction to Computer Engineering Course Assistant}{January 2013 --- May 2015}
 \item Incorporated TI MSP430 microcontrollers deeper into the curriculum with the goal of having each student purchase a LaunchPad in lieu of a textbook, which could lead to personal projects after completion of the course
-\item Coached twenty students in digital logic, state machines, assembly and C programming\item Assisted students with two larger projects: an FPGA calculator (using Quartus) and an ISA simulator (in CCS)
+\item Coached twenty students in digital logic, state machines, assembly and C programming
+\item Assisted students with two larger projects: an FPGA calculator (using Quartus) and an ISA simulator (in CCS)
 \end{position}
 \begin{position}{Fundamentals of Electrical Engineering Course Assistant}{Fall 2013}
 \item Guided a group of five students though the successful completion of their problem sets by teaching introductory system theory, circuit theory, Fourier analysis, and information theory
@@ -108,8 +111,8 @@ Houston, TX \hfill (847) 404-3386 \hfill \href{mailto:adam@adambloom.me}{adam@ad
 
 \begin{resumeSection}{Education}
 \begin{employer}{Rice University}{Houston, TX}
-\degree{Master of Electrical Engineering}{Expected December 2015}{3.XX}{} \newline
-\degree{Bachelor of Science in Electrical Engineering}{May 2015}{3.XX}{Cum Laude}
+\degree{Master of Electrical Engineering}{Expected December 2015}{}
+\degree{Bachelor of Science in Electrical Engineering}{May 2015}{Cum Laude}
 \end{employer}
 \end{resumeSection}
 
