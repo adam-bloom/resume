@@ -1,5 +1,5 @@
 % resume.tex
-\documentclass[10pt,letterpaper]{article}
+\documentclass[10pt,letterpaper,hidelinks]{article}
 \usepackage[letterpaper,margin=0.8in]{geometry}
 \usepackage{mdwlist}
 \usepackage[T1]{fontenc}
@@ -34,7 +34,7 @@
 }
 
 \newenvironment{resumeSection}[1]{
-%\vspace{1em}
+%\hfill \newline
 {\Large \textbf{\textsc{#1}}}
 \vspace{0.25em}
 \hrule
@@ -62,55 +62,69 @@
 \forceindent {\large #1\ifx\empty#3\else{, }\fi \emph{#3} \hfill \emph{#2}} \newline
 }
 
+\newcommand{\certification}[3]{
+\forceindent {#1\ifx\empty#3\else{, }\fi #3 \hfill #2} \newline
+}
 
 \begin{document}
 \printName{Adam Bloom}
-Denver, CO \hfill (847) 404-3386 \hfill \href{mailto:adam@adambloom.me}{adam@adambloom.me} \hfill \href{http://www.adambloom.me}{http://www.adambloom.me}
+    \begin{tabular}{ l @{\hspace{17em}} p{0.3\textwidth} @{\hspace{0.5em}} r}
+    Denver, CO & (847) 404-3386 & \href{mailto:adam.bloom@alumni.rice.edu}{adam.bloom@alumni.rice.edu}\\
+    \end{tabular}
+%Denver, CO \hfill (847) 404-3386 \hfill \href{mailto:adam.bloom@alumni.rice.edu}{adam.bloom@alumni.rice.edu}
 \vspace{0.5em} \newline
-\begin{resumeSection}{Experience}
-\begin{employer}{ViaSat, Inc.}{Denver, CO}
-\begin{position}{Systems Engineer}{January 2016 --- Present}
-\item My team seeks to improve the experience of our customers by increasing the capacity of our Exede internet network
-\end{position}
-\begin{position}{Communication Systems Engineering Intern}{Summer 2014}
-\item Developed carrier power monitoring system for the physical layer of the Exede network, allowing for automated data collection, historical trending, and automated alerts to prevent outages for 685,000 subscribers.
-\end{position}
-\end{employer}
+\begin{resumeSection}{Technical Expertise}
+Experience debugging and developing using the following languages: Python, C/C++, Go, Java, Scala, MATLAB
+\newline
+Worked extensively with these technologies: Docker, Avro, Kafka, SQL, Spark, Git, Django, Flask, Linux
+\newline
+Rely on these DevOps Tools: Ansible, Jenkins, Splunk, Grafana, Elasticsearch, xMatters
+\end{resumeSection}
+\hfill \newline
+\begin{resumeSection}{Professional Development and Certifications}
+\certification{Certified Scrum Product Owner}{June 2020}{Mountain Goat Software}
+\certification{Leading at Viasat: Manager Essentials}{June 2020}{Harvard Business Publishing}
+\certification{Viasat Supervisor Development Program}{April 2018}{}
+\certification{Certified ScrumMaster}{February 2017}{Mountain Goat Software}
+\certification{Splunk Certified Architect 6.x}{January 2017}{Splunk}
+\end{resumeSection}
 
-\begin{employer}{Electrical and Computer Engineering Department, Rice University}{Houston, TX}
-\begin{position}{Introduction to Computer Engineering Course Assistant}{January 2013 --- May 2015}
-\item Incorporated TI MSP430 microcontrollers deeper into the curriculum with the goal of having each student purchase a LaunchPad in lieu of a textbook, which could lead to personal projects after completion of the course
-\item Coached twenty students in digital logic, state machines, assembly and C programming
-\item Assisted students with two larger projects: an FPGA calculator (using Quartus) and an ISA simulator (in CCS)
+\begin{resumeSection}{Professional Experience}
+\begin{employer}{Viasat, Inc.}{Remote/Denver, CO}
+\begin{position}{Product Owner \& Lead DevOps Engineer}{February 2020 --- Present}
+\item Lead team of 5 engineers collectively responsible for DevOps Engineering for Viasat Internet MAC software
+\item Develop DevOps vision and product backlog for satellite ground system MAC software (current/next generation), including software architecture for monitoring, configuration, and deployment of a containerized distributed system
+\item Coordinate monitoring, configuration, and deployment tasks among 3 US software teams and 1 India team
+\item Perform end-to-end debug of complex issues affecting our broadband satellite internet service (packet loss, VoIP jitter, link adaptation algorithms) for consumers, businesses, and government customers using our commercial network
+\item Facilitate blameless postmortem process following customer impacting incidents
+\item Drive integration and acceptance effort of next generation MAC software, reducing business risk of a critical ground system component prior to Viasat-3 satellite launch
+\end {position}
+\begin{position}{Systems Engineer}{January 2018 --- February 2020}
+\item Member of Viasat-2 Core Beta team, tasked with Viasat-2 payload calibration and service entry
+\item Lead development, deployment, and acceptance testing of a key bandwidth management software component
+\item Develop and integrate new capabilities in our frequency planning/configuration tool to maximize bandwidth utilization
+\item Envisioning and preliminary definition of next generation satellite MAC interfaces and algorithms
+\item Co-design satellite configuration generation system with support for multiple satellite classes
+\item Clearly document, explain, and review design concepts with key technical stakeholders
+\item Perform data analytics and lend technical expertise to support satellite capacity management efforts
+\item Supervise intern project involving geospatial indexing and GraphQL API development
 \end{position}
-\begin{position}{Fundamentals of Electrical Engineering Course Assistant}{Fall 2013}
-\item Guided a group of five students though the successful completion of their problem sets by teaching introductory system theory, circuit theory, Fourier analysis, and information theory
+\begin{position}{Software Engineer}{January 2016 --- January 2018}
+\item Perform final integration of calibration software of satellite ground system in preparation for service launch
+\item Implement SSL/TLS connections for the satellite ground system control message broker (RabbitMQ)
+\item Develop satellite ground system monitoring capabilities (metrics, dashboards, alerts)
+\item Automate deployment and configuration of Splunk software in AWS, to facilitate migration from legacy on-prem cluster 
 \end{position}
+%\begin{position}{Communication Systems Engineering Intern}{Summer 2014}
+%\item Developed carrier power monitoring system for the physical layer of the Exede network, allowing for automated data collection, historical trending, and automated alerts to prevent outages for 685,000 subscribers.
+%\end{position}
 \end{employer}
+\end{resumeSection}
 
-\begin{employer}{McMurtry College, Rice University}{Houston, TX}
-\begin{position}{Student Maintenance Representative}{August 2014 --- May 2015}
-\item Assist students living in 240-room residential building with any maintenance concerns
-\item Communicate housing policies and other pertinent information to fellow students
+\begin{resumeSection}{Personal Projects}
+\begin{position}{Camp Nebagamon Staff Time Off Assignments}{}
+\item Built django web application to solve constrained optimization problem of assigning cabin staff time off, replacing a manual process that allowed many conflicts with inefficient resolution
 \end{position}
-\begin{position}{Faculty Master Search Committee Chair}{September 2014 --- December 2014}
-\item Oversaw search for next faculty Master: solicited applications from faculty, conducted interviews, planned mixer events with students, solicited feedback from students, presented recommendation to Dean of Undergraduates
-\item Selected other students as committee members, organized meetings, communicated with committee and college\end{position}
-\begin{position}{Internal Vice President}{February 2013 --- February 2014}
-\item Managed on-campus housing eligibility and assignments for a building housing 324 students.
-\item Improved room selection process for returning students to increase predictability and alleviate drama and tension
-\item Oversaw six committees and multiple representatives, assisted each with event planning and budget management
-\end{position}
-\end{employer}
-
-\begin{employer}{Camp Nebagamon for Boys}{Lake Nebagamon, WI}
-\begin{position}{Senior Cabin Counselor}{Summers 2010 --- 2013, 2015}
-\item Supervised and ensured wellbeing of small groups of boys for 4-8 weeks
-\item Mentored new staff members, teaching them counseling skills and assisting with difficult situations
-\item Created new curriculum for the orienteering program to better integrate GPS technology with map and compass skills and trained staff members in teaching methods
-\end{position}
-\end{employer}
-
 \end{resumeSection}
 
 \begin{resumeSection}{Education}
@@ -120,17 +134,60 @@ Denver, CO \hfill (847) 404-3386 \hfill \href{mailto:adam@adambloom.me}{adam@ada
 \end{employer}
 \end{resumeSection}
 
-\begin{resumeSection}{Honors and Awards}
-    \begin{tabular}{ >{\bfseries}r @{\hspace{2em}} p{0.7\textwidth} @{\hspace{4em}} r}
-    Awards & Burt and Deedee McMurtry Award for service to McMurtry College & 2015\\
-    & Rice Engineering Alumni Distinguished Leadership Excellence Award & 2015\\ 
-    & Bill Wilson Prize for Best Electrical and Computer Engineering Design &2015\\
-    & Chevron Scholarship & 2014\\
-    & Barbara Long Chilton Memorial Award for STEM majors involved in theater & 2012 \\
-      Honor Societies & Tau Beta Pi, Inducted Texas Gamma chapter & 2014\\
-      & IEEE-HKN, Inducted Theta Rho chapter & 2014
-    \end{tabular}
-\end{resumeSection}
+%\begin{resumeSection}{Hobbies}
+%Hiking, Cooking, Theatre, Board Games, Reading
+%\end{resumeSection}
+
+%\begin{resumeSection}{Other Experience}
+%\begin{employer}{Electrical and Computer Engineering Department, Rice University}{Houston, TX}
+%\begin{position}{Introduction to Computer Engineering Course Assistant}{January 2013 --- May 2015}
+%\item Incorporated TI MSP430 microcontrollers deeper into the curriculum with the goal of having each student purchase a LaunchPad in lieu of a textbook, which could lead to personal projects after completion of the course
+%\item Coached twenty students in digital logic, state machines, assembly and C programming
+%\item Assisted students with two larger projects: an FPGA calculator (using Quartus) and an ISA simulator (in CCS)
+%\end{position}
+%\begin{position}{Fundamentals of Electrical Engineering Course Assistant}{Fall 2013}
+%\item Guided a group of five students though the successful completion of their problem sets by teaching introductory system theory, circuit theory, Fourier analysis, and information theory
+%\end{position}
+%\end{employer}
+%\end{resumeSection}
+%\begin{employer}{McMurtry College, Rice University}{Houston, TX}
+%\begin{position}{Student Maintenance Representative}{August 2014 --- May 2015}
+%\item Assist students living in 240-room residential building with any maintenance concerns
+%\item Communicate housing policies and other pertinent information to fellow students
+%\end{position}
+%\begin{position}{Faculty Master Search Committee Chair}{September 2014 --- December 2014}
+%\item Oversaw search for next faculty Master: solicited applications from faculty, conducted interviews, planned mixer events with students, solicited feedback from students, presented recommendation to Dean of Undergraduates
+%\item Selected other students as committee members, organized meetings, communicated with committee and college
+%\end{position}
+%\begin{position}{Internal Vice President}{February 2013 --- February 2014}
+%\item Managed on-campus housing eligibility and assignments for a building housing 324 students.
+%\item Improved room selection process for returning students to increase predictability and alleviate drama and tension
+%\item Oversaw six committees and multiple representatives, assisted each with event planning and budget management
+%\end{position}
+%\end{employer}
+%
+%\begin{employer}{Camp Nebagamon for Boys}{Lake Nebagamon, WI}
+%\begin{position}{Senior Cabin Counselor}{Summers 2010 --- 2013, 2015}
+%\item Supervised and ensured wellbeing of small groups of boys for 4-8 weeks
+%\item Mentored new staff members, teaching them counseling skills and assisting with difficult situations
+%\item Created new curriculum for the orienteering program to better integrate GPS technology with map and compass skills and trained staff members in teaching methods
+%
+%\end{position}
+%\end{employer}
+%
+%\end{resumeSection}
+%
+%\begin{resumeSection}{Honors and Awards}
+%    \begin{tabular}{ >{\bfseries}r @{\hspace{2em}} p{0.7\textwidth} @{\hspace{4em}} r}
+%    Awards & Burt and Deedee McMurtry Award for service to McMurtry College & 2015\\
+%    & Rice Engineering Alumni Distinguished Leadership Excellence Award & 2015\\ 
+%    & Bill Wilson Prize for Best Electrical and Computer Engineering Design &2015\\
+%    & Chevron Scholarship & 2014\\
+%    & Barbara Long Chilton Memorial Award for STEM majors involved in theater & 2012 \\
+%      Honor Societies & Tau Beta Pi, Inducted Texas Gamma chapter & 2014\\
+%      & IEEE-HKN, Inducted Theta Rho chapter & 2014
+%    \end{tabular}
+%\end{resumeSection}
 
 
 \end{document}
