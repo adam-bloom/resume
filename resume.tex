@@ -10,19 +10,17 @@
 \usepackage{hyperref}
 \usepackage{lipsum}
 \usepackage{enumitem}
-%\usepackage{tabularx}
 \usepackage{array}
 \nofiles                            % .aux files are not needed for resumes
 
-%\usepackage[default]{lato}
 \usepackage[default]{sourcesanspro}
 
-%\usepackage{tgadventor}
-%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
 
 \newcommand*{\seriffont}{\fontfamily{yv1}\selectfont}
-%\newcommand*{\seriffont}{\fontfamily{antpl}\selectfont}
-%\newcommand*{\seriffont}{\fontfamily{ebgaramond}\selectfont}
+
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=0.75in, bottom=0.6in,
+ top=0.6in}
 
 \setlength{\parindent}{0pt}
 \newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
@@ -76,9 +74,9 @@
 \begin{resumeSection}{Technical Expertise}
 Experience debugging and developing using the following languages: Python, C/C++, Go, Java, Scala, MATLAB
 \newline
-Worked extensively with these technologies: Docker, Avro, Kafka, SQL, Spark, Git, Django, Flask, Linux
+Worked extensively with these technologies: Docker, Avro, Kafka, PostgreSQL, Spark, Git, AWS, Django, Flask, Linux
 \newline
-Rely on these DevOps Tools: Ansible, Jenkins, Splunk, Grafana, Elasticsearch, xMatters
+Rely on these DevOps Tools: Terraform, Ansible, Packer, Jenkins, Splunk, Grafana, Elasticsearch, xMatters
 \end{resumeSection}
 \hfill \newline
 \begin{resumeSection}{Professional Development and Certifications}
@@ -90,30 +88,37 @@ Rely on these DevOps Tools: Ansible, Jenkins, Splunk, Grafana, Elasticsearch, xM
 \end{resumeSection}
 
 \begin{resumeSection}{Professional Experience}
+\begin{employer}{Spire Global}{Remote/Boulder, CO}
+\begin{position}{GNSS, Ground Processing Software Engineer}{December 2020 --- Present}
+\item Develop new features and diagnose issues in the real time radio occultation processing system, using Python, ECS, SQS
+\item Identify DevOps hurdles and architect solutions: implement database migrations, end-to-end testing, telemetry
+\item Reduced cloud costs by approximately 20\% via workflow optimizations and use-case analysis
+\item Designed and developed client for parsing and storing critical external data using Go and DynamoDB
+\end {position}
+\end{employer}
 \begin{employer}{Viasat, Inc.}{Remote/Denver, CO}
-\begin{position}{Product Owner \& Lead DevOps Engineer}{February 2020 --- Present}
+\begin{position}{Product Owner \& Lead DevOps Engineer}{February 2020 --- December 2020}
 \item Lead team of 5 engineers collectively responsible for DevOps Engineering for Viasat Internet MAC software
 \item Develop DevOps vision and product backlog for satellite ground system MAC software (current/next generation), including software architecture for monitoring, configuration, and deployment of a containerized distributed system
 \item Coordinate monitoring, configuration, and deployment tasks among 3 US software teams and 1 India team
 \item Perform end-to-end debug of complex issues affecting our broadband satellite internet service (packet loss, VoIP jitter, link adaptation algorithms) for consumers, businesses, and government customers using our commercial network
-\item Facilitate blameless postmortem process following customer impacting incidents
+%\item Facilitate blameless postmortem process following customer impacting incidents
 \item Drive integration and acceptance effort of next generation MAC software, reducing business risk of a critical ground system component prior to Viasat-3 satellite launch
 \end {position}
 \begin{position}{Systems Engineer}{January 2018 --- February 2020}
 \item Member of Viasat-2 Core Beta team, tasked with Viasat-2 payload calibration and service entry
-\item Lead development, deployment, and acceptance testing of a key bandwidth management software component
+%\item Lead development, deployment, and acceptance testing of a key bandwidth management software component
 \item Develop and integrate new capabilities in our frequency planning/configuration tool to maximize bandwidth utilization
 \item Envisioning and preliminary definition of next generation satellite MAC interfaces and algorithms
 \item Co-design satellite configuration generation system with support for multiple satellite classes
-\item Clearly document, explain, and review design concepts with key technical stakeholders
 \item Perform data analytics and lend technical expertise to support satellite capacity management efforts
 \item Supervise intern project involving geospatial indexing and GraphQL API development
 \end{position}
 \begin{position}{Software Engineer}{January 2016 --- January 2018}
 \item Perform final integration of calibration software of satellite ground system in preparation for service launch
-\item Implement SSL/TLS connections for the satellite ground system control message broker (RabbitMQ)
+%\item Implement SSL/TLS connections for the satellite ground system control message broker (RabbitMQ)
 \item Develop satellite ground system monitoring capabilities (metrics, dashboards, alerts)
-\item Automate deployment and configuration of Splunk software in AWS, to facilitate migration from legacy on-prem cluster 
+%\item Automate deployment and configuration of Splunk software in AWS, to facilitate migration from legacy on-prem cluster 
 \end{position}
 %\begin{position}{Communication Systems Engineering Intern}{Summer 2014}
 %\item Developed carrier power monitoring system for the physical layer of the Exede network, allowing for automated data collection, historical trending, and automated alerts to prevent outages for 685,000 subscribers.
@@ -122,8 +127,11 @@ Rely on these DevOps Tools: Ansible, Jenkins, Splunk, Grafana, Elasticsearch, xM
 \end{resumeSection}
 
 \begin{resumeSection}{Personal Projects}
+\begin{position}{OpenRCT2}{}
+\item Contributed various efforts to the open source project: CI improvements, native M1 macOS app, various bug fixes
+\end{position}
 \begin{position}{Camp Nebagamon Staff Time Off Assignments}{}
-\item Built django web application to solve constrained optimization problem of assigning cabin staff time off, replacing a manual process that allowed many conflicts with inefficient resolution
+\item Built a Django web application to solve constrained optimization problem of assigning cabin staff time off, replacing a manual process that allowed many conflicts with inefficient resolution
 \end{position}
 \end{resumeSection}
 
@@ -133,7 +141,6 @@ Rely on these DevOps Tools: Ansible, Jenkins, Splunk, Grafana, Elasticsearch, xM
 \degree{Bachelor of Science in Electrical Engineering}{May 2015}{Cum Laude}
 \end{employer}
 \end{resumeSection}
-
 %\begin{resumeSection}{Hobbies}
 %Hiking, Cooking, Theatre, Board Games, Reading
 %\end{resumeSection}
@@ -188,6 +195,4 @@ Rely on these DevOps Tools: Ansible, Jenkins, Splunk, Grafana, Elasticsearch, xM
 %      & IEEE-HKN, Inducted Theta Rho chapter & 2014
 %    \end{tabular}
 %\end{resumeSection}
-
-
 \end{document}
